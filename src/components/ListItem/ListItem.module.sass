@@ -1,0 +1,35 @@
+@import  'styles.global.sass'
+.ListItem
+  display: grid
+  width: calc(100% - 2em)
+  grid-template-columns: 10em auto 10em
+  margin: 0 1em
+  padding: 1em 0
+  grid-gap: 1em
+  text-decoration: none
+  color: $letterColor
+  .imgContainer
+    height: 10em
+    width: 10em
+    overflow: hidden
+    display: flex
+    align-items: center
+    justify-content: center
+    border-radius: 5px
+    img
+      width: 100%
+  .itemTitle
+    width: 100%
+    padding-top: 1.3em
+    .itemPrice
+      font-size: 1.5em
+    .itemName
+      padding-top: 0.6em
+      font-size: 1.1em
+    img
+      width: 2em
+      margin-left: 0.5em
+      width: 1.2em
+  .itemState
+    padding-top: 2em
+    font-size: 0.8em
