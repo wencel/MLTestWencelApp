@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly WHEN a valid set of items is passed and no error or loading are set 1`] = `ShallowWrapper {}`;
+
+exports[`renders correctly WHEN an error has ocurred 1`] = `ShallowWrapper {}`;
+
+exports[`renders correctly WHEN loading is taking place 1`] = `ShallowWrapper {}`;

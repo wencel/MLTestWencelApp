@@ -11,7 +11,7 @@ const initState = {
   },
   selectedItem: {
     loading: false,
-    data: [],
+    data: {},
     error: '',
   },
 };

@@ -5,22 +5,26 @@ import Loading from 'components/Loading';
 
 const ItemsList = ({ items, loading, error }) => {
   return (
-    <div className={Styles.ItemsList}>
-      {!error &&
-        !loading &&
-        items.map((item, index) => (
-          <ListItem
-            item={item}
-            className={index !== 0 ? Styles.upperBorder : ''}
-          />
-        ))}
+    <>
+      {!error && !loading && (
+        <div className={Styles.ItemsList}>
+          {items.map((item, index) => (
+            <ListItem
+              key={item.id}
+              item={item}
+              className={index !== 0 ? Styles.upperBorder : ''}
+            />
+          ))}
+        </div>
+      )}
       {loading && <Loading />}
       {error && <div>{error}</div>}
-    </div>
+    </>
   );
 };
 
 ItemsList.propTypes = {
+  categories: PropTypes.array,
   error: PropTypes.string,
   items: PropTypes.array,
   loading: PropTypes.bool,

@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
+import { useParams } from 'react-router-dom';
 import {
   redirectSearchItems,
   requestFetchItem,
@@ -13,11 +14,13 @@ const ItemDetailContainer = ({
   requestFetchItem,
   item,
 }) => {
+  const { id } = useParams();
   return (
     <ItemDetail
       redirectSearchItems={redirectSearchItems}
       requestFetchItem={requestFetchItem}
       item={item}
+      id={id}
     />
   );
 };

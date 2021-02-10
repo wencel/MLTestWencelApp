@@ -1,11 +1,13 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
+import { useLocation } from 'react-router-dom';
 import {
   redirectSearchItems,
   requestSearchItems,
 } from 'reducers/item/itemActions';
 import { itemsSelector } from 'reducers/item/itemSelectors';
+import { getQueryTextParams } from 'utils/utils';
 import SearchResults from './SearchResults';
 
 const SearchResultsContainer = ({
@@ -13,11 +15,13 @@ const SearchResultsContainer = ({
   requestSearchItems,
   items,
 }) => {
+  const { search } = getQueryTextParams(useLocation().search);
   return (
     <SearchResults
       redirectSearchItems={redirectSearchItems}
       requestSearchItems={requestSearchItems}
       items={items}
+      search={search}
     />
   );
 };

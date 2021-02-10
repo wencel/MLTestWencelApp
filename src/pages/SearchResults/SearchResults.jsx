@@ -1,14 +1,16 @@
 import PropTypes from 'prop-types';
 import SearchNavbar from 'components/SearchNavbar';
 import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
-import { getQueryTextParams } from 'utils/utils';
 import ItemsList from 'components/ItemsList';
 import BreadCrums from 'components/BreadCrums';
 import ContentContainer from 'components/ContentContainer';
 
-const SearchResults = ({ redirectSearchItems, requestSearchItems, items }) => {
-  const { search } = getQueryTextParams(useLocation().search);
+const SearchResults = ({
+  redirectSearchItems,
+  requestSearchItems,
+  items,
+  search,
+}) => {
   useEffect(() => {
     if (search) requestSearchItems(search);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -42,6 +44,7 @@ SearchResults.propTypes = {
   }),
   redirectSearchItems: PropTypes.func,
   requestSearchItems: PropTypes.func,
+  search: PropTypes.string,
 };
 
 SearchResults.defaultProps = {
