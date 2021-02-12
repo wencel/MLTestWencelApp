@@ -7,7 +7,7 @@ import { mount } from 'enzyme';
 
 const mockStore = configureStore([]);
 
-describe('Search page container', () => {
+describe('SearchPageContainer', () => {
   let store;
   let wrapper;
 

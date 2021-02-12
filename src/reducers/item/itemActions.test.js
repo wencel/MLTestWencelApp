@@ -1,7 +1,7 @@
 import * as itemActions from './itemActions';
 import itemConstants from './itemConstants';
 
-describe('actions', () => {
+describe('itemActions', () => {
   it('should create an action to redirect to the searched items page', () => {
     const text = 'Test search';
     const expectedAction = {

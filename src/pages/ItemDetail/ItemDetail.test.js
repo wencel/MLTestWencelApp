@@ -2,7 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 import ItemDetail from './ItemDetail';
 
-describe('WHEN mounting the component', () => {
+describe('ItemDetail', () => {
   const redirectSearchItems = jest.fn(0);
   const requestFetchItem = jest.fn(0);
   const item = {

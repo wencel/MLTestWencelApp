@@ -20,7 +20,7 @@ jest.mock('react-router-dom', () => ({
     search: `?search=${searchValue}`,
   }),
 }));
-describe('Search page container', () => {
+describe('SearchResultsContainer', () => {
   let store;
   let wrapper;
 
@@ -67,7 +67,7 @@ describe('Search page container', () => {
         },
       },
     });
-    const history = createMemoryHistory('/dashboard');
+    const history = createMemoryHistory('/');
     store.dispatch = jest.fn();
 
     wrapper = mount(

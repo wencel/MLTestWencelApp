@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import ItemDetailCard from './ItemDetailCard';
 import Styles from './ItemDetailCard.module.sass';
 
-describe('renders correctly', () => {
+describe('ItemDetailCard', () => {
   const item = {
     author: {
       name: 'Wencel',
@@ -27,7 +27,7 @@ describe('renders correctly', () => {
   };
   let error = '';
   let loading = false;
-  it('WHEN a valid item is passed and no error or loading are set', () => {
+  it('renders correctly with valid data', () => {
     const wrapper = shallow(
       <ItemDetailCard item={item} loading={loading} error={error} />
     );
@@ -35,7 +35,7 @@ describe('renders correctly', () => {
     expect(wrapper.find(`.${Styles.ItemDetailCard}`).length).toEqual(1);
   });
 
-  it('WHEN loading is taking place', () => {
+  it('renders correctly when loading is taking place', () => {
     loading = true;
     const wrapper = shallow(
       <ItemDetailCard item={item} loading={loading} error={error} />
@@ -45,7 +45,7 @@ describe('renders correctly', () => {
     expect(wrapper.find('Loading').length).toEqual(1);
   });
 
-  it('WHEN an error has ocurred', () => {
+  it('renders correctly when an error has ocurred', () => {
     error = 'this is an error';
     loading = false;
     const wrapper = shallow(

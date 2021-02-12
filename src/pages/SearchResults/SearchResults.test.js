@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import SearchResults from './SearchResults';
 
-describe('When it mounts the component', () => {
+describe('SearchResults', () => {
   const redirectSearchItems = jest.fn();
   const requestSearchItems = jest.fn();
   const items = { data: {}, loading: false, error: '' };

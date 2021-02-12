@@ -2,7 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 import SearchInput from './SearchInput';
 
-describe('WHEN mounting the component', () => {
+describe('SearchInput', () => {
   const onSearch = jest.fn(0);
   const onChange = jest.fn(0);
   const wrapper = mount(

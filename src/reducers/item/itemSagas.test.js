@@ -17,7 +17,7 @@ import {
   requestFetchItemSaga,
 } from './itemSagas';
 
-describe('redirectSearchItems', () => {
+describe('itemSagas', () => {
   it('should not do anything if no payload is passed', async () => {
     const dispatched = [];
     await runSaga(

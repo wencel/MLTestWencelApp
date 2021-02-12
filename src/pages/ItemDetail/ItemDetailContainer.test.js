@@ -19,7 +19,7 @@ jest.mock('react-router-dom', () => ({
     id,
   }),
 }));
-describe('Search page container', () => {
+describe('ItemDetailContainer', () => {
   let store;
   let wrapper;
 
@@ -46,7 +46,7 @@ describe('Search page container', () => {
         },
       },
     });
-    const history = createMemoryHistory('/dashboard');
+    const history = createMemoryHistory('/');
     store.dispatch = jest.fn();
 
     wrapper = mount(
@@ -62,7 +62,7 @@ describe('Search page container', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should dispatch the request search items action on mount', () => {
+  it('should dispatch the request fetch item action on mount', () => {
     expect(store.dispatch).toHaveBeenCalledTimes(1);
     expect(store.dispatch).toHaveBeenCalledWith(requestFetchItem(id));
   });
