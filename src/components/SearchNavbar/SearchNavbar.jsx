@@ -4,6 +4,15 @@ import logoImg from 'assets/img/mlLogo.png';
 import SearchInput from 'components/SearchInput';
 import { useState } from 'react';
 
+/**
+ * Component to render the upper search navbar.
+ *
+ * @component
+ * @example
+ * return (
+ *   <SearchNavbar onSearch={()=>{})} initialSearchTerm='term' />
+ * )
+ */
 const SearchNavbar = ({ onSearch, initialSearchTerm }) => {
   const [queryText, setQueryText] = useState(initialSearchTerm);
 
@@ -30,7 +39,13 @@ SearchNavbar.defaultProps = {
 };
 
 SearchNavbar.propTypes = {
+  /**
+   * Value to prefill the search box on mount
+   */
   initialSearchTerm: PropTypes.string,
+  /**
+   * Function to trigger the search event
+   */
   onSearch: PropTypes.func,
 };
 

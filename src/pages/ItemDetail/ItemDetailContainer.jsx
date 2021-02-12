@@ -9,11 +9,18 @@ import {
 import { selectedItemSelector } from 'reducers/item/itemSelectors';
 import ItemDetail from './ItemDetail';
 
+/**
+ * Composed component for the item detail page,
+ * it uses redux compose to pass actions and info from the state.
+ */
 const ItemDetailContainer = ({
   redirectSearchItems,
   requestFetchItem,
   item,
 }) => {
+  /**
+   * id retrieved from the url params
+   */
   const { id } = useParams();
   return (
     <ItemDetail
@@ -26,8 +33,17 @@ const ItemDetailContainer = ({
 };
 
 ItemDetailContainer.propTypes = {
+  /**
+   * item retrieved from the state
+   */
   item: PropTypes.object,
+  /**
+   * action dispatched to redirect to the results search page
+   */
   redirectSearchItems: PropTypes.func,
+  /**
+   * action dispatched to fetch an item by id
+   */
   requestFetchItem: PropTypes.func,
 };
 

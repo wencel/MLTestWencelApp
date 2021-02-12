@@ -10,11 +10,16 @@ import { itemsSelector } from 'reducers/item/itemSelectors';
 import { getQueryTextParams } from 'utils/utils';
 import SearchResults from './SearchResults';
 
+/**
+ * Composed component for the search results page,
+ * it uses redux compose to pass actions and info from the state.
+ */
 const SearchResultsContainer = ({
   redirectSearchItems,
   requestSearchItems,
   items,
 }) => {
+  // Function to retrieve url text query params
   const search = getQueryTextParams(useLocation().search).search || '';
   return (
     <SearchResults
@@ -27,15 +32,24 @@ const SearchResultsContainer = ({
 };
 
 SearchResultsContainer.propTypes = {
+  /**
+   * items retrieved from the state
+   */
   items: PropTypes.shape({
     data: PropTypes.shape({
-      categories: PropTypes.array,
-      items: PropTypes.array,
+      categories: PropTypes.arrayOf(PropTypes.string),
+      items: PropTypes.arrayOf(PropTypes.object),
     }),
     error: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
     loading: PropTypes.bool,
   }),
+  /**
+   * action dispatched to redirect to the results search page
+   */
   redirectSearchItems: PropTypes.func,
+  /**
+   * action dispatched to search items with a query
+   */
   requestSearchItems: PropTypes.func,
 };
 

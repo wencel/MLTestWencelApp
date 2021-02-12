@@ -4,6 +4,28 @@ import { Link } from 'react-router-dom';
 import CurrencyFormat from 'react-currency-format';
 import freeShippingIcon from 'assets/img/freeShipping.png';
 
+/**
+ * Component for rendering a list of items.
+ *
+ * @component
+ * @example
+ * const item = {
+      id: 'id1',
+      title: 'Item tite',
+      price: {
+        currency: 'ARS',
+        amount: 59300,
+        decimals: '00',
+      },
+      picture: 'Picture url',
+      condition: 'new',
+      free_shipping: true,
+      state: 'State',
+    },
+ * return (
+ *   <ListItem item={item} className='className' />
+ * )
+ */
 const ListItem = ({ item, className }) => {
   return (
     <Link
@@ -36,7 +58,13 @@ const ListItem = ({ item, className }) => {
 };
 
 ListItem.propTypes = {
+  /**
+   * Classname to style the component
+   */
   className: PropTypes.string,
+  /**
+   * Item to render the information
+   */
   item: PropTypes.shape({
     free_shipping: PropTypes.bool,
     id: PropTypes.string,
