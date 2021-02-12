@@ -3,6 +3,7 @@ import Styles from './SearchNavbar.module.sass';
 import logoImg from 'assets/img/mlLogo.png';
 import SearchInput from 'components/SearchInput';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 /**
  * Component to render the upper search navbar.
@@ -19,7 +20,9 @@ const SearchNavbar = ({ onSearch, initialSearchTerm }) => {
   return (
     <nav className={Styles.SearchNavbar}>
       <div className={Styles.searchContainer}>
-        <img className={Styles.mlLogo} src={logoImg} alt='ML logo' />
+        <Link className={Styles.mlLogo} to='/'>
+          <img src={logoImg} alt='ML logo' />
+        </Link>
         <SearchInput
           inputProps={{
             placeholder: 'Nunca dejes de buscar',
