@@ -13,7 +13,7 @@ const ItemDetailCard = ({ item, loading, error }) => {
             <img src={item.picture} alt='item img' />
           </div>
           <div className={Styles.infoContainer}>
-            <div>
+            <div className={Styles.conditionContainer}>
               {item.condition === 'new' && 'Nuevo'}{' '}
               {item.condition === 'used' && 'Usado'} - {item.sold_quantity}{' '}
               vendidos
@@ -30,7 +30,7 @@ const ItemDetailCard = ({ item, loading, error }) => {
                 {item.price?.decimals}
               </div>
             </div>
-            <div>
+            <div className={Styles.buttonContainer}>
               <Button theme='blueTheme'>Comprar</Button>
             </div>
           </div>

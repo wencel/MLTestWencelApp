@@ -70,5 +70,3 @@ export const itemReducer = function (state = initState, action) {
       return state;
   }
 };
-
-export default itemReducer;

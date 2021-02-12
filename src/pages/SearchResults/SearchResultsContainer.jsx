@@ -15,7 +15,7 @@ const SearchResultsContainer = ({
   requestSearchItems,
   items,
 }) => {
-  const { search } = getQueryTextParams(useLocation().search);
+  const search = getQueryTextParams(useLocation().search).search || '';
   return (
     <SearchResults
       redirectSearchItems={redirectSearchItems}
